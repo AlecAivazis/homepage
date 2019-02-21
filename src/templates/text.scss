@@ -1,0 +1,54 @@
+.remark {
+    h1 {
+        font-family: 'Mark Regular';
+        font-size: 28px;
+        margin-bottom: 32px;
+    }
+
+    h2 {
+        font-family: 'Mark Regular';
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    p {
+        font-family: 'Mark Light';
+        font-size: 20px;
+        margin-bottom: 32px;
+        line-height: 1.5;
+    }
+
+    .gatsby-resp-image-wrapper {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .gatsby-highlight {
+        background: #fafafa;
+        margin: 32px 0;
+    }
+
+    .language-text {
+        font-size: 15px;
+    }
+
+    ul {
+        margin-top: -15px;
+        list-style: disc;
+        margin-left: 25px;
+    }
+
+    li {
+        margin-top: 9px;
+        font-size: 18px;
+        font-family: 'Mark Light';
+    }
+
+    a {
+        text-decoration: underline;
+        color: #2f2f2f;
+        &:visited {
+            color: #2f2f2f;
+        }
+    }
+}

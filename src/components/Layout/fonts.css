@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Mark Bold';
+    src: url('../../fonts/8706c0b6-b423-44f7-ae1a-dd0aabd8a542.eot?#iefix');
+    src: url('../../fonts/8706c0b6-b423-44f7-ae1a-dd0aabd8a542.eot?#iefix') format('eot'),
+        url('../../fonts/41c8162d-c2a6-49b0-8139-8bebab187588.woff2') format('woff2'),
+        url('../../fonts/4fe94f2e-7892-4785-9663-0350a7adf8c0.woff') format('woff'),
+        url('../../fonts/3a7daddb-0a78-4734-a699-6fe08d0e8b99.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Mark Medium';
+    src: url('../../fonts/36390511-9c88-42f2-890f-1ae4b1e7dd70.eot?#iefix');
+    src: url('../../fonts/36390511-9c88-42f2-890f-1ae4b1e7dd70.eot?#iefix') format('eot'),
+        url('../../fonts/72d3aeb4-7402-40d6-a945-34360316b980.woff2') format('woff2'),
+        url('../../fonts/f17f16a9-09cc-4170-a039-5f47a4948438.woff') format('woff'),
+        url('../../fonts/340db581-50b2-4783-8f40-db42ea764bda.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Mark Regular';
+    src: url('../../fonts/230b3c63-b497-421b-ae7d-182024bef8ac.eot?#iefix');
+    src: url('../../fonts/230b3c63-b497-421b-ae7d-182024bef8ac.eot?#iefix') format('eot'),
+        url('../../fonts/ec598369-4d91-4a16-9db3-6654f68d3c28.woff2') format('woff2'),
+        url('../../fonts/90214997-3760-4b80-a23b-fec02ab55fac.woff') format('woff'),
+        url('../../fonts/118e930e-1f56-4131-aee9-236212c0a10b.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Mark Light';
+    src: url('../../fonts/a8abc20c-6ce3-48be-b25e-41ae3c6e0379.eot?#iefix');
+    src: url('../../fonts/a8abc20c-6ce3-48be-b25e-41ae3c6e0379.eot?#iefix') format('eot'),
+        url('../../fonts/3d82d7a7-de70-4f67-85f4-78342de5fedb.woff2') format('woff2'),
+        url('../../fonts/23acf083-b36e-4baf-aabc-4935a5c4bdce.woff') format('woff'),
+        url('../../fonts/caf2b644-efc2-495e-af03-3b385d7de014.ttf') format('truetype');
+}

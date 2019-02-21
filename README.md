@@ -1,3 +1,3 @@
-# nautilus.cool
+# homepage
 
-The home on the internet for all things nautilus! Not yet live at http://nautilus.cool.
+My little corner of the internet

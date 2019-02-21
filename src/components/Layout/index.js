@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
 // local imports
 import { darkGrey } from '~/colors'
 
@@ -24,7 +23,6 @@ const Container = styled.div`
 `
 
 const InnerContainer = styled.div`
-    width: 700px;
     height: 100%;
     display: flex;
     flex-direction: column;

@@ -4,55 +4,61 @@ import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
 // local imports
 import { Layout, SEO } from '~/components'
-import { darkGrey } from '~/colors'
 
 const IndexPage = () => (
-    <Layout style={{ paddingTop: 100 }}>
-        <SEO title="Home" keywords={['nautilus', 'graphql', 'schema', 'federation']} />
-        <Title>Hi 👋</Title>
-        <Title>I'm Alec Aivazis.</Title>
-        <Body style={{ marginTop: 32 }}>
-            I’m a sofware engineer focused on web stuff. My work usually includes react or graphql
-            in one way or another.
-        </Body>
-        <SectionTitle>Things I've Written</SectionTitle>
-        <StaticQuery
-            query={graphql`
-                {
-                    posts: allMarkdownRemark(sort: { order: ASC, fields: [fileAbsolutePath] }) {
-                        edges {
-                            node {
-                                id
-                                frontmatter {
-                                    title
-                                    subtitle
-                                    path
-                                    date(formatString: "M/D/Y")
-                                }
-                                fields {
-                                    readingTime {
-                                        text
+    <Layout style={{ paddingTop: 78 }}>
+        <div style={{ width: 700 }}>
+            <SEO title="Home" keywords={['nautilus', 'graphql', 'schema', 'federation']} />
+            <Title>
+                Hi{' '}
+                <span role="img" aria-label="wave">
+                    👋
+                </span>
+            </Title>
+            <Title>I'm Alec Aivazis.</Title>
+            <Body style={{ marginTop: 19 }}>
+                I’m a sofware engineer focused on web stuff. Lately, my work includes react or
+                graphql in one way or another.
+            </Body>
+            <SectionTitle>Things I've Written</SectionTitle>
+            <StaticQuery
+                query={graphql`
+                    {
+                        posts: allMarkdownRemark(sort: { order: ASC, fields: [fileAbsolutePath] }) {
+                            edges {
+                                post: node {
+                                    id
+                                    frontmatter {
+                                        title
+                                        subtitle
+                                        path
+                                        date(formatString: "M/D/Y")
+                                    }
+                                    fields {
+                                        readingTime {
+                                            text
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
-            `}
-            render={data => (
-                <>
-                    {data.posts.edges.map(({ node }) => (
-                        <>
-                            <PostTitle>{node.frontmatter.title}</PostTitle>
-                            <PostSubtitle>{node.frontmatter.subtitle}</PostSubtitle>
-                            <PostInfoContainer>
-                                {node.frontmatter.date} • {node.fields.readingTime.text}
-                            </PostInfoContainer>
-                        </>
-                    ))}
-                </>
-            )}
-        />
+                `}
+                render={data => (
+                    <>
+                        {data.posts.edges.map(({ post }) => (
+                            <Link to={post.frontmatter.path}>
+                                <PostTitle>{post.frontmatter.title}</PostTitle>
+                                <PostSubtitle>{post.frontmatter.subtitle}</PostSubtitle>
+                                <PostInfoContainer>
+                                    {post.frontmatter.date} • {post.fields.readingTime.text}
+                                </PostInfoContainer>
+                            </Link>
+                        ))}
+                    </>
+                )}
+            />
+        </div>
     </Layout>
 )
 

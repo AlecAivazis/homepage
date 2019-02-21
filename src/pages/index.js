@@ -69,7 +69,7 @@ const Title = styled.h1`
 const SectionTitle = styled.h2`
     font-size: 28px;
     margin-top: 43px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 `
 
 const Body = styled.p`
@@ -85,10 +85,11 @@ const PostTitle = styled.h3`
 const PostSubtitle = styled.h4`
     font-size: 18px;
     margin-bottom: 4px;
+    line-height: 32px;
 `
 
 const PostInfoContainer = styled.div`
-    margin-bottom: 12px;
+    margin-bottom: 24px;
 `
 
 export default IndexPage

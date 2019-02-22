@@ -1,5 +1,4 @@
 .remark {
-    
     margin-bottom: 175px;
 
     h1 {
@@ -50,12 +49,14 @@
 
     a {
         text-decoration: underline;
+        color: black;
         &:visited {
+            color: black;
         }
     }
 
     .section-divider {
-        text-align:center;
+        text-align: center;
         font-size: 30px;
         letter-spacing: 18px;
 

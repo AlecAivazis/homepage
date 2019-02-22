@@ -1,8 +1,12 @@
 .remark {
+    
+    margin-bottom: 175px;
+
     h1 {
         font-family: 'Mark Regular';
         font-size: 28px;
-        margin-bottom: 32px;
+        margin-bottom: 12px;
+        margin-top: 50px;
     }
 
     h2 {
@@ -24,8 +28,8 @@
     }
 
     .gatsby-highlight {
-        background: #fafafa;
         margin: 32px 0;
+        border-radius: 4px;
     }
 
     .language-text {
@@ -50,5 +54,25 @@
         &:visited {
             color: white;
         }
+    }
+
+    .section-divider {
+        text-align:center;
+        font-size: 30px;
+        letter-spacing: 18px;
+
+        &:before {
+            content: '...';
+        }
+    }
+
+    blockquote {
+        margin: 0 50px;
+        font-family: 'Mark Medium';
+        font-style: italic;
+    }
+
+    .media {
+        margin-bottom: 40px;
     }
 }

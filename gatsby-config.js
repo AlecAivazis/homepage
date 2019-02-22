@@ -33,7 +33,7 @@ module.exports = {
                             // It's important to specify the maxWidth (in pixels) of
                             // the content container as this plugin uses this as the
                             // base for generating different widths of each image.
-                            maxWidth: 590,
+                            maxWidth: 700,
                             linkImagesToOriginal: false,
                         },
                     },
@@ -45,7 +45,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `gatsby-starter-default`,
+                name: `Alec Aivazis`,
                 short_name: `starter`,
                 start_url: `/`,
                 background_color: `#663399`,

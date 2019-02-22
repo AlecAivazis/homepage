@@ -1,4 +1,7 @@
 .remark {
+    
+    margin-bottom: 175px;
+
     h1 {
         font-family: 'Mark Regular';
         font-size: 28px;
@@ -49,6 +52,16 @@
         color: white;
         &:visited {
             color: white;
+        }
+    }
+
+    .section-divider {
+        text-align:center;
+        font-size: 30px;
+        letter-spacing: 18px;
+
+        &:before {
+            content: '...';
         }
     }
 }

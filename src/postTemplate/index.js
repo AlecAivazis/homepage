@@ -14,6 +14,10 @@ export default function Template({
 }) {
     const { markdownRemark } = data // data.markdownRemark holds our post data
     const { frontmatter, html } = markdownRemark
+
+    // prepare the post content to show
+    const content = html.replace(/--/g, `<div class="section-divider"></div>`)
+
     return (
         <Layout>
             <SEO title={frontmatter.title} />
@@ -39,7 +43,7 @@ export default function Template({
             <Container>
                 <Content>
                     <Title>{frontmatter.title}</Title>
-                    <div className="remark" dangerouslySetInnerHTML={{ __html: html }} />
+                    <div className="remark" dangerouslySetInnerHTML={{ __html: content }} />
                 </Content>
             </Container>
         </Layout>

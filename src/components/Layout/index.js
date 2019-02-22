@@ -17,8 +17,8 @@ const Container = styled.div`
     height: 100vh;
     display: flex;
     flex-direction: row;
-    background-color: ${darkGrey};
-    color: white;
+    background-color: white;
+    color: ${darkGrey};
     justify-content: center;
 `
 

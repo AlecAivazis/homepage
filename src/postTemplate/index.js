@@ -16,7 +16,7 @@ export default function Template({
     const { frontmatter, html } = markdownRemark
 
     // prepare the post content to show
-    const content = html.replace(/--/g, `<div class="section-divider"></div>`)
+    const content = html.replace(/=-=/g, `<div class="section-divider"></div>`)
 
     return (
         <Layout>

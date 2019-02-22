@@ -5,7 +5,8 @@
     h1 {
         font-family: 'Mark Regular';
         font-size: 28px;
-        margin-bottom: 32px;
+        margin-bottom: 12px;
+        margin-top: 50px;
     }
 
     h2 {
@@ -63,5 +64,15 @@
         &:before {
             content: '...';
         }
+    }
+
+    blockquote {
+        margin: 0 50px;
+        font-family: 'Mark Medium';
+        font-style: italic;
+    }
+
+    .media {
+        margin-bottom: 40px;
     }
 }

@@ -7,17 +7,24 @@ export default (key, defaultValue) => {
         throw new Error('Must provide key')
     }
 
+    let storage
+    try {
+        storage = window.localStorage
+    } catch {
+        storage = {}
+    }
+
     // if we don't have a value for the key and we're given a defaultValue
-    if (defaultValue) {
-        window.localStorage[key] = defaultValue
+    if (!storage[key] && defaultValue) {
+        storage[key] = defaultValue
     }
 
     // lets build up a piece of state that will sync up with the local storage value
-    const [state, setState] = React.useState(window.localStorage[key])
+    const [state, setState] = React.useState(storage[key])
 
     // whenever our state changes we need to update local storage
     React.useEffect(() => {
-        window.localStorage[key] = state
+        storage[key] = state
     }, [state])
 
     // a function to call that updates the value

@@ -11,7 +11,11 @@ export const Context = React.createContext()
 // can look up the theme
 export const Provider = ({ children }) => {
     // a bit of state to track the current theme
-    const [theme, setTheme] = useLocalStorage('theme', '🌞')
+    try {
+        var [theme, setTheme] = useLocalStorage('theme', '🌞')
+    } catch {
+        var [theme, setTheme] = React.useState('🌞')
+    }
 
     // toggle the selection
     const toggleTheme = () => setTheme(theme === '🌞' ? '🌙' : '🌞')

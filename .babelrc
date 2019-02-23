@@ -3,6 +3,7 @@
     "plugins": [
         "@babel/plugin-proposal-do-expressions",
         "@babel/plugin-proposal-export-default-from",
+        "@babel/plugin-syntax-export-namespace-from",
         [
             "babel-plugin-root-import",
             {

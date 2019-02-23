@@ -3,17 +3,20 @@ import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
 // local imports
-import { Layout, SEO } from '~/components'
+import { Layout, SEO, Theme } from '~/components'
 
 const IndexPage = () => (
     <Layout style={{ paddingTop: 78 }}>
         <div style={{ width: 700 }}>
             <SEO title="Home" keywords={['nautilus', 'graphql', 'schema', 'federation']} />
-            <Title>
-                Hi{' '}
-                <span role="img" aria-label="wave">
-                    👋
+            <Title style={{ justifyContent: 'space-between' }}>
+                <span>
+                    Hi{' '}
+                    <span role="img" aria-label="wave">
+                        👋
+                    </span>
                 </span>
+                <Theme.Toggle />
             </Title>
             <Title>I'm Alec Aivazis.</Title>
             <Body style={{ marginTop: 19 }}>
@@ -47,7 +50,7 @@ const IndexPage = () => (
                 render={data => (
                     <>
                         {data.posts.edges.map(({ post }) => (
-                            <Link to={post.frontmatter.path}>
+                            <Link to={post.frontmatter.path} key={post.id}>
                                 <PostTitle>{post.frontmatter.title}</PostTitle>
                                 <PostSubtitle>{post.frontmatter.subtitle}</PostSubtitle>
                                 <PostInfoContainer>
@@ -64,6 +67,8 @@ const IndexPage = () => (
 
 const Title = styled.h1`
     font-size: 32px;
+    display: flex;
+    flex-direction: row;
 `
 
 const SectionTitle = styled.h2`

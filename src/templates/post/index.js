@@ -3,7 +3,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 // local imports
-import { Layout, SEO } from '~/components'
+import { Layout, SEO, Theme } from '~/components'
 import { IconTwitter, IconGitHub } from '~/images'
 
 import './code.css'
@@ -18,10 +18,13 @@ export default function Template({
     // prepare the post content to show
     const content = html.replace(/=-=/g, `<div class="section-divider"></div>`)
 
+    // grab the current colors
+    const { colors } = React.useContext(Theme.Context)
+
     return (
         <Layout>
             <SEO title={frontmatter.title} />
-            <Header>
+            <Header style={{ color: colors.fontColor }}>
                 <Link to="/">Alec Aivazis</Link>
                 <SocialIconContainer>
                     <a
@@ -38,6 +41,7 @@ export default function Template({
                     >
                         <IconGitHub style={{ width: 24, height: 24, marginLeft: 20 }} />
                     </a>
+                    <Theme.Toggle style={{ marginLeft: 20 }} />
                 </SocialIconContainer>
             </Header>
             <Container>

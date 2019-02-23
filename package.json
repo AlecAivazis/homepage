@@ -51,6 +51,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-do-expressions": "^7.2.0",
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-syntax-export-namespace-from": "^7.2.0",
     "babel-plugin-root-import": "^6.1.0",
     "babel-preset-gatsby": "^0.1.7",
     "gatsby-plugin-react-svg": "^2.0.0",

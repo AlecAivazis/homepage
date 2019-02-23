@@ -1,24 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
 // local imports
-import { darkGrey } from '~/colors'
+import { Theme } from '~/components'
 
 import './fonts.css'
 import './reset.css'
 
-export default ({ children, ...unused }) => (
-    <Container {...unused}>
-        <InnerContainer>{children}</InnerContainer>
-    </Container>
-)
+export default ({ children, style, ...unused }) => {
+    // grab the theme name
+    const { colors } = React.useContext(Theme.Context)
+
+    // render the component
+    return (
+        <Container
+            style={{ color: colors.fontColor, backgroundColor: colors.backgroundColor, ...style }}
+            {...unused}
+        >
+            <InnerContainer>{children}</InnerContainer>
+        </Container>
+    )
+}
 
 const Container = styled.div`
     width: '100%';
     height: 100vh;
     display: flex;
     flex-direction: row;
-    background-color: white;
-    color: ${darkGrey};
+
     justify-content: center;
 `
 

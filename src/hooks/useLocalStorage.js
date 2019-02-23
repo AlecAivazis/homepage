@@ -8,7 +8,7 @@ export default (key, defaultValue) => {
     }
 
     // if we don't have a value for the key and we're given a defaultValue
-    if (!window.localStorage[key] && defaultValue) {
+    if (defaultValue) {
         window.localStorage[key] = defaultValue
     }
 

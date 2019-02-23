@@ -14,6 +14,7 @@ export const Provider = ({ children }) => {
     try {
         var [theme, setTheme] = useLocalStorage('theme', '🌞')
     } catch {
+        // eslint-disable-next-line no-redeclare
         var [theme, setTheme] = React.useState('🌞')
     }
 
@@ -49,7 +50,7 @@ export const Toggle = ({ style }) => {
 
 const themes = {
     '🌞': {
-        fontColor: 'black',
+        fontColor: '#1C1C1C',
         backgroundColor: 'white',
     },
     '🌙': {

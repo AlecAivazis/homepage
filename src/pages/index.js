@@ -27,7 +27,9 @@ const IndexPage = () => (
             <StaticQuery
                 query={graphql`
                     {
-                        posts: allMarkdownRemark(sort: { order: ASC, fields: [fileAbsolutePath] }) {
+                        posts: allMarkdownRemark(
+                            sort: { order: DESC, fields: [frontmatter___date] }
+                        ) {
                             edges {
                                 post: node {
                                     id

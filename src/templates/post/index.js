@@ -47,6 +47,7 @@ export default function Template({
             <Container>
                 <Content>
                     <Title>{frontmatter.title}</Title>
+                    <Subtitle>{frontmatter.subtitle}</Subtitle>
                     <div className="remark" dangerouslySetInnerHTML={{ __html: content }} />
                 </Content>
             </Container>
@@ -76,7 +77,12 @@ const Container = styled.div`
 `
 
 const Title = styled.h1`
+    margin-bottom: 8px;
+`
+
+const Subtitle = styled.h1`
     margin-bottom: 32px;
+    fontsize: 24px;
 `
 
 const SocialIconContainer = styled.div`
@@ -96,6 +102,7 @@ export const pageQuery = graphql`
             frontmatter {
                 path
                 title
+                subtitle
             }
         }
     }

@@ -47,7 +47,7 @@ export default function Template({
             <Container>
                 <Content>
                     <Title>{frontmatter.title}</Title>
-                    <Subtitle>{frontmatter.subtitle}</Subtitle>
+                    <SubTitle>{frontmatter.subtitle}</SubTitle>
                     <div className="remark" dangerouslySetInnerHTML={{ __html: content }} />
                 </Content>
             </Container>
@@ -80,9 +80,9 @@ const Title = styled.h1`
     margin-bottom: 8px;
 `
 
-const Subtitle = styled.h1`
+const SubTitle = styled.h1`
     margin-bottom: 32px;
-    fontsize: 24px;
+    font-size: 24px;
 `
 
 const SocialIconContainer = styled.div`

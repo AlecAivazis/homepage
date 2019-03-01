@@ -24,7 +24,7 @@ export default function Template({
     return (
         <Layout>
             <SEO title={frontmatter.title} />
-            <Header style={{ color: colors.fontColor }}>
+            <Header style={{ color: colors.fontColor, backgroundColor: colors.backgroundColor }}>
                 <Link to="/">Alec Aivazis</Link>
                 <SocialIconContainer>
                     <a
@@ -56,8 +56,8 @@ export default function Template({
 }
 
 const Header = styled.header`
-    margin-top: 12px;
-    margin-bottom: 40px;
+    padding-top: 12px;
+    padding-bottom: 40px;
     font-family: 'Mark Light';
     font-size: 20px;
     display: flex;
@@ -65,6 +65,9 @@ const Header = styled.header`
     justify-content: space-between;
     width: 100%;
     align-self: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 `
 
 const Container = styled.div`

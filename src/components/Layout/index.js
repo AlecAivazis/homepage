@@ -26,6 +26,7 @@ const Container = styled.div`
     flex-direction: row;
 
     justify-content: center;
+    min-height: 100vh;
 `
 
 const InnerContainer = styled.div`

@@ -22,8 +22,6 @@ export default ({ children, style, ...unused }) => {
 }
 
 const Container = styled.div`
-    width: '100%';
-    height: 100vh;
     display: flex;
     flex-direction: row;
 
@@ -33,5 +31,7 @@ const Container = styled.div`
 const InnerContainer = styled.div`
     height: 100%;
     display: flex;
+    width: 90%;
+    max-width: 700px;
     flex-direction: column;
 `

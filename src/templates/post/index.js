@@ -63,14 +63,14 @@ const Header = styled.header`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 700px;
+    width: 100%;
     align-self: center;
 `
 
 const Container = styled.div`
     height: 100%;
     overflow-y: auto;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -92,7 +92,7 @@ const SocialIconContainer = styled.div`
 `
 
 const Content = styled.div`
-    width: 700px;
+    width: 100%;
 `
 
 export const pageQuery = graphql`

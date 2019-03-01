@@ -7,63 +7,59 @@ import { Layout, SEO, Theme } from '~/components'
 
 const IndexPage = () => (
     <Layout style={{ paddingTop: 78 }}>
-        <div style={{ width: 700 }}>
-            <SEO title="Home" keywords={['nautilus', 'graphql', 'schema', 'federation']} />
-            <Title style={{ justifyContent: 'space-between' }}>
-                <span>
-                    Hi{' '}
-                    <span role="img" aria-label="wave">
-                        👋
-                    </span>
+        <SEO title="Home" keywords={['nautilus', 'graphql', 'schema', 'federation']} />
+        <Title style={{ justifyContent: 'space-between' }}>
+            <span>
+                Hi{' '}
+                <span role="img" aria-label="wave">
+                    👋
                 </span>
-                <Theme.Toggle />
-            </Title>
-            <Title>I'm Alec Aivazis.</Title>
-            <Body style={{ marginTop: 19 }}>
-                I’m a sofware engineer focused on web stuff. Lately, my work includes react or
-                graphql in one way or another.
-            </Body>
-            <SectionTitle>Things I've Written</SectionTitle>
-            <StaticQuery
-                query={graphql`
-                    {
-                        posts: allMarkdownRemark(
-                            sort: { order: DESC, fields: [frontmatter___date] }
-                        ) {
-                            edges {
-                                post: node {
-                                    id
-                                    frontmatter {
-                                        title
-                                        subtitle
-                                        path
-                                        date(formatString: "M/D/Y")
-                                    }
-                                    fields {
-                                        readingTime {
-                                            text
-                                        }
+            </span>
+            <Theme.Toggle />
+        </Title>
+        <Title>I'm Alec Aivazis.</Title>
+        <Body style={{ marginTop: 19 }}>
+            I’m a sofware engineer focused on web stuff. Lately, my work includes react or graphql
+            in one way or another.
+        </Body>
+        <SectionTitle>Things I've Written</SectionTitle>
+        <StaticQuery
+            query={graphql`
+                {
+                    posts: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+                        edges {
+                            post: node {
+                                id
+                                frontmatter {
+                                    title
+                                    subtitle
+                                    path
+                                    date(formatString: "M/D/Y")
+                                }
+                                fields {
+                                    readingTime {
+                                        text
                                     }
                                 }
                             }
                         }
                     }
-                `}
-                render={data => (
-                    <>
-                        {data.posts.edges.map(({ post }) => (
-                            <Link to={post.frontmatter.path} key={post.id}>
-                                <PostTitle>{post.frontmatter.title}</PostTitle>
-                                <PostSubtitle>{post.frontmatter.subtitle}</PostSubtitle>
-                                <PostInfoContainer>
-                                    {post.frontmatter.date} • {post.fields.readingTime.text}
-                                </PostInfoContainer>
-                            </Link>
-                        ))}
-                    </>
-                )}
-            />
-        </div>
+                }
+            `}
+            render={data => (
+                <>
+                    {data.posts.edges.map(({ post }) => (
+                        <Link to={post.frontmatter.path} key={post.id}>
+                            <PostTitle>{post.frontmatter.title}</PostTitle>
+                            <PostSubtitle>{post.frontmatter.subtitle}</PostSubtitle>
+                            <PostInfoContainer>
+                                {post.frontmatter.date} • {post.fields.readingTime.text}
+                            </PostInfoContainer>
+                        </Link>
+                    ))}
+                </>
+            )}
+        />
     </Layout>
 )
 

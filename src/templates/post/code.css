@@ -71,7 +71,6 @@ pre[class*='language-'] {
 
 .token.class-name {
     color: #ffffb6;
-    text-decoration: underline;
 }
 
 .token.boolean,
@@ -107,7 +106,6 @@ pre[class*='language-'] {
 
 .token.entity {
     color: #ffffb6;
-    /* text-decoration: underline; */
 }
 
 .token.url {

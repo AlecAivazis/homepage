@@ -19,7 +19,7 @@ const IndexPage = () => (
         </Title>
         <Title>I'm Alec Aivazis.</Title>
         <Body style={{ marginTop: 19 }}>
-            I’m a sofware engineer focused on web stuff. Lately, my work includes react or graphql
+            I’m a sofware engineer focused on web stuff. Lately, my work includes React or GraphQL
             in one way or another.
         </Body>
         <SectionTitle>Things I've Written</SectionTitle>

@@ -4,11 +4,13 @@
  * @author Joe Gibson (@gibsjose)
  */
 
+code[class*='language-'] * {
+    font-family: 'dm' !important;
+}
 code[class*='language-'],
 pre[class*='language-'] {
     color: #c5c8c6;
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-    font-family: 'dm';
     font-variant-ligatures: common-ligatures;
     direction: ltr;
     text-align: left;

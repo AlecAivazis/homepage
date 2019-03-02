@@ -49,13 +49,15 @@ const IndexPage = () => (
             render={data => (
                 <>
                     {data.posts.edges.map(({ post }) => (
-                        <Link to={post.frontmatter.path} key={post.id}>
-                            <PostTitle>{post.frontmatter.title}</PostTitle>
-                            <PostSubtitle>{post.frontmatter.subtitle}</PostSubtitle>
-                            <PostInfoContainer>
-                                {post.frontmatter.date} • {post.fields.readingTime.text}
-                            </PostInfoContainer>
-                        </Link>
+                        <PostContainer>
+                            <Link to={post.frontmatter.path} key={post.id}>
+                                <PostTitle>{post.frontmatter.title}</PostTitle>
+                                <PostSubtitle>{post.frontmatter.subtitle}</PostSubtitle>
+                                <div>
+                                    {post.frontmatter.date} • {post.fields.readingTime.text}
+                                </div>
+                            </Link>
+                        </PostContainer>
                     ))}
                 </>
             )}
@@ -92,7 +94,7 @@ const PostSubtitle = styled.h4`
     line-height: 22px;
 `
 
-const PostInfoContainer = styled.div`
+const PostContainer = styled.div`
     margin-bottom: 24px;
 `
 

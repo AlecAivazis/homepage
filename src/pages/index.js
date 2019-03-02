@@ -83,12 +83,13 @@ const Body = styled.p`
 const PostTitle = styled.h3`
     font-size: 22px;
     margin-top: 7px;
+    margin-bottom: 3px;
 `
 
 const PostSubtitle = styled.h4`
     font-size: 18px;
     margin-bottom: 4px;
-    line-height: 32px;
+    line-height: 22px;
 `
 
 const PostInfoContainer = styled.div`

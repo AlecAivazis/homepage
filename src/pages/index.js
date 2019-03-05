@@ -7,61 +7,61 @@ import { Layout, SEO, Theme } from '~/components'
 
 const IndexPage = () => (
     <Layout style={{ paddingTop: 78 }}>
-        <div style={{ width: 700 }}>
-            <SEO title="Home" keywords={['nautilus', 'graphql', 'schema', 'federation']} />
-            <Title style={{ justifyContent: 'space-between' }}>
-                <span>
-                    Hi{' '}
-                    <span role="img" aria-label="wave">
-                        👋
-                    </span>
+        <SEO title="Home" keywords={['nautilus', 'graphql', 'schema', 'federation']} />
+        <Title style={{ justifyContent: 'space-between' }}>
+            <span>
+                Hi{' '}
+                <span role="img" aria-label="wave">
+                    👋
                 </span>
-                <Theme.Toggle />
-            </Title>
-            <Title>I'm Alec Aivazis.</Title>
-            <Body style={{ marginTop: 19 }}>
-                I’m a sofware engineer focused on web stuff. Lately, my work includes react or
-                graphql in one way or another.
-            </Body>
-            <SectionTitle>Things I've Written</SectionTitle>
-            <StaticQuery
-                query={graphql`
-                    {
-                        posts: allMarkdownRemark(sort: { order: ASC, fields: [fileAbsolutePath] }) {
-                            edges {
-                                post: node {
-                                    id
-                                    frontmatter {
-                                        title
-                                        subtitle
-                                        path
-                                        date(formatString: "M/D/Y")
-                                    }
-                                    fields {
-                                        readingTime {
-                                            text
-                                        }
+            </span>
+            <Theme.Toggle />
+        </Title>
+        <Title>I'm Alec Aivazis.</Title>
+        <Body style={{ marginTop: 19 }}>
+            I’m a sofware engineer focused on web stuff. Lately, my work includes React or GraphQL
+            in one way or another.
+        </Body>
+        <SectionTitle>Things I've Written</SectionTitle>
+        <StaticQuery
+            query={graphql`
+                {
+                    posts: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+                        edges {
+                            post: node {
+                                id
+                                frontmatter {
+                                    title
+                                    subtitle
+                                    path
+                                    date(formatString: "M/D/Y")
+                                }
+                                fields {
+                                    readingTime {
+                                        text
                                     }
                                 }
                             }
                         }
                     }
-                `}
-                render={data => (
-                    <>
-                        {data.posts.edges.map(({ post }) => (
+                }
+            `}
+            render={data => (
+                <>
+                    {data.posts.edges.map(({ post }) => (
+                        <PostContainer>
                             <Link to={post.frontmatter.path} key={post.id}>
                                 <PostTitle>{post.frontmatter.title}</PostTitle>
                                 <PostSubtitle>{post.frontmatter.subtitle}</PostSubtitle>
-                                <PostInfoContainer>
+                                <div>
                                     {post.frontmatter.date} • {post.fields.readingTime.text}
-                                </PostInfoContainer>
+                                </div>
                             </Link>
-                        ))}
-                    </>
-                )}
-            />
-        </div>
+                        </PostContainer>
+                    ))}
+                </>
+            )}
+        />
     </Layout>
 )
 
@@ -85,15 +85,16 @@ const Body = styled.p`
 const PostTitle = styled.h3`
     font-size: 22px;
     margin-top: 7px;
+    margin-bottom: 3px;
 `
 
 const PostSubtitle = styled.h4`
     font-size: 18px;
     margin-bottom: 4px;
-    line-height: 32px;
+    line-height: 22px;
 `
 
-const PostInfoContainer = styled.div`
+const PostContainer = styled.div`
     margin-bottom: 24px;
 `
 

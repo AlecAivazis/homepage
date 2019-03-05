@@ -8,6 +8,7 @@ import { IconTwitter, IconGitHub } from '~/images'
 
 import './code.css'
 import './text.scss'
+import './dm.css'
 
 export default function Template({
     data, // this prop will be injected by the GraphQL query below.
@@ -24,7 +25,7 @@ export default function Template({
     return (
         <Layout>
             <SEO title={frontmatter.title} />
-            <Header style={{ color: colors.fontColor }}>
+            <Header style={{ color: colors.fontColor, backgroundColor: colors.backgroundColor }}>
                 <Link to="/">Alec Aivazis</Link>
                 <SocialIconContainer>
                     <a
@@ -47,6 +48,7 @@ export default function Template({
             <Container>
                 <Content>
                     <Title>{frontmatter.title}</Title>
+                    <SubTitle>{frontmatter.subtitle}</SubTitle>
                     <div className="remark" dangerouslySetInnerHTML={{ __html: content }} />
                 </Content>
             </Container>
@@ -55,28 +57,36 @@ export default function Template({
 }
 
 const Header = styled.header`
-    margin-top: 12px;
-    margin-bottom: 40px;
+    padding-top: 12px;
+    padding-bottom: 40px;
     font-family: 'Mark Light';
     font-size: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 700px;
+    width: 100%;
     align-self: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 `
 
 const Container = styled.div`
     height: 100%;
     overflow-y: auto;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
 `
 
 const Title = styled.h1`
+    margin-bottom: 8px;
+`
+
+const SubTitle = styled.h1`
     margin-bottom: 32px;
+    font-size: 24px;
 `
 
 const SocialIconContainer = styled.div`
@@ -86,7 +96,7 @@ const SocialIconContainer = styled.div`
 `
 
 const Content = styled.div`
-    width: 700px;
+    width: 100%;
 `
 
 export const pageQuery = graphql`
@@ -96,6 +106,7 @@ export const pageQuery = graphql`
             frontmatter {
                 path
                 title
+                subtitle
             }
         }
     }

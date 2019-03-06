@@ -11,10 +11,10 @@ export const Context = React.createContext()
 // can look up the theme
 export const Provider = ({ children }) => {
     // a bit of state to track the current theme
-    var [theme, setTheme] = useLocalStorage('theme', '🌞')
+    var [theme, setTheme] = useLocalStorage('theme', 'day')
 
     // toggle the selection
-    const toggleTheme = () => setTheme(theme === '🌞' ? '🌙' : '🌞')
+    const toggleTheme = () => setTheme(theme === 'day' ? 'night' : 'day')
 
     return (
         <Context.Provider value={{ name: theme, colors: themes[theme], toggleTheme }}>
@@ -28,7 +28,7 @@ export const Toggle = ({ style }) => {
     // pull out the theme information
     const { toggleTheme, name } = React.useContext(Context)
 
-    const isMoon = name === '🌙'
+    const isMoon = name === 'night'
     // use the right component
     const Component = isMoon ? MoonToggleContainer : SunToggleContainer
 
@@ -38,17 +38,17 @@ export const Toggle = ({ style }) => {
             onClick={toggleTheme}
             style={{ borderColor: isMoon ? 'white' : 'black', ...style }}
         >
-            <Component>{name}</Component>
+            <Component>{isMoon ? '🌙' : '🌞'}</Component>
         </ToggleContainer>
     )
 }
 
 const themes = {
-    '🌞': {
+    day: {
         fontColor: '#1C1C1C',
         backgroundColor: 'white',
     },
-    '🌙': {
+    night: {
         fontColor: 'white',
         backgroundColor: '#1C1C1C',
     },

@@ -10,6 +10,7 @@
 @mixin toggle($content, $direction) {
     & .theme-toggle:before {
         content: $content;
+        line-height: 34px;
     }
 
     & .theme-toggle {
@@ -20,9 +21,18 @@
 .night {
     @include theme(white, #1c1c1c);
     @include toggle('🌙', row-reverse);
+
+    & .theme-toggle:before {
+        font-size: 24px;
+        margin-right: 3px;
+    }
 }
 
 .day {
     @include theme(#1c1c1c, white);
     @include toggle('🌞', row);
+
+    & .theme-toggle:before {
+        margin-left: 2px;
+    }
 }

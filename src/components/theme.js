@@ -32,6 +32,10 @@ export const Toggle = ({ style }) => {
     // use the right component
     const Component = isMoon ? MoonToggleContainer : SunToggleContainer
 
+    React.useEffect(() => {
+        window.setTheme(name)
+    }, [name])
+
     // render a UI component to flip the theme
     return (
         <ToggleContainer

@@ -19,13 +19,10 @@ export default function Template({
     // prepare the post content to show
     const content = html.replace(/=-=/g, `<div class="section-divider"></div>`)
 
-    // grab the current colors
-    const { colors } = React.useContext(Theme.Context)
-
     return (
         <Layout>
             <SEO title={frontmatter.title} />
-            <Header style={{ color: colors.fontColor, backgroundColor: colors.backgroundColor }}>
+            <Header>
                 <Link to="/">Alec Aivazis</Link>
                 <SocialIconContainer>
                     <a

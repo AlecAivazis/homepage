@@ -49,8 +49,8 @@ const IndexPage = () => (
             render={data => (
                 <>
                     {data.posts.edges.map(({ post }) => (
-                        <PostContainer>
-                            <Link to={post.frontmatter.path} key={post.id}>
+                        <PostContainer key={post.id}>
+                            <Link to={post.frontmatter.path}>
                                 <PostTitle>{post.frontmatter.title}</PostTitle>
                                 <PostSubtitle>{post.frontmatter.subtitle}</PostSubtitle>
                                 <div>

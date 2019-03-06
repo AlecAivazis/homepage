@@ -17,9 +17,7 @@ export const Provider = ({ children }) => {
     const toggleTheme = () => setTheme(theme === 'day' ? 'night' : 'day')
 
     return (
-        <Context.Provider value={{ name: theme, colors: themes[theme] || {}, toggleTheme }}>
-            {children}
-        </Context.Provider>
+        <Context.Provider value={{ name: theme || {}, toggleTheme }}>{children}</Context.Provider>
     )
 }
 
@@ -28,34 +26,12 @@ export const Toggle = ({ style }) => {
     // pull out the theme information
     const { toggleTheme, name } = React.useContext(Context)
 
-    const isMoon = name === 'night'
-    // use the right component
-    const Component = isMoon ? MoonToggleContainer : SunToggleContainer
-
     React.useEffect(() => {
         window.setTheme(name)
     }, [name])
 
     // render a UI component to flip the theme
-    return (
-        <ToggleContainer
-            onClick={toggleTheme}
-            style={{ borderColor: isMoon ? 'white' : 'black', ...style }}
-        >
-            <Component>{isMoon ? '🌙' : '🌞'}</Component>
-        </ToggleContainer>
-    )
-}
-
-const themes = {
-    day: {
-        fontColor: '#1C1C1C',
-        backgroundColor: 'white',
-    },
-    night: {
-        fontColor: 'white',
-        backgroundColor: '#1C1C1C',
-    },
+    return <ToggleContainer className="theme-toggle" onClick={toggleTheme} />
 }
 
 const ToggleContainer = styled.div`
@@ -67,28 +43,5 @@ const ToggleContainer = styled.div`
     border-style: solid;
     border-width: 4px;
     cursor: pointer;
-`
-
-const MoonToggleContainer = styled.div`
-    padding-right: 6px;
-    background-color: #1c1c1c;
-    flex-direction: row-reverse;
     display: flex;
-    height: 100%;
-    width: 100%;
-    line-height: 100%;
-    align-items: center;
-    font-size: 21px;
-`
-
-const SunToggleContainer = styled.div`
-    padding-right: 6px;
-    background-color: white;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    line-height: 100%;
-    align-items: center;
-    padding-left: 5px;
-    font-size: 25px;
 `

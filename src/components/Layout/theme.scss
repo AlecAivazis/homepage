@@ -1,17 +1,28 @@
-.night {
-    color: white;
-    background-color: #1c1c1c;
+@mixin theme($text, $background) {
+    color: $text;
+    background-color: $background;
 
     & header {
-        background-color: #1c1c1c;
+        background-color: $background;
     }
 }
 
-.day {
-    color: #1c1c1c;
-    background-color: white;
-
-    & header {
-        background-color: white;
+@mixin toggle($content, $direction) {
+    & .theme-toggle:before {
+        content: $content;
     }
+
+    & .theme-toggle {
+        flex-direction: $direction;
+    }
+}
+
+.night {
+    @include theme(white, #1c1c1c);
+    @include toggle('🌙', row-reverse);
+}
+
+.day {
+    @include theme(#1c1c1c, white);
+    @include toggle('🌞', row);
 }

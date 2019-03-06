@@ -33,6 +33,7 @@
     @include toggle('🌞', row);
 
     & .theme-toggle:before {
+        font-size: 28px;
         margin-left: 2px;
     }
 }

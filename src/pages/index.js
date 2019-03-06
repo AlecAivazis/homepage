@@ -15,7 +15,7 @@ const IndexPage = () => (
                     👋
                 </span>
             </span>
-            <Theme.Toggle />
+            <Theme.Toggle style={{ marginLeft: 20 }} />
         </Title>
         <Title>I'm Alec Aivazis.</Title>
         <Body style={{ marginTop: 19 }}>

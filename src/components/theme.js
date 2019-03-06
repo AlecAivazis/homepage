@@ -22,7 +22,7 @@ export const Provider = ({ children }) => {
 }
 
 // this should be used to toggle between themes
-export const Toggle = ({ style }) => {
+export const Toggle = ({ ...unused }) => {
     // pull out the theme information
     const { toggleTheme, name } = React.useContext(Context)
 
@@ -31,7 +31,7 @@ export const Toggle = ({ style }) => {
     }, [name])
 
     // render a UI component to flip the theme
-    return <ToggleContainer className="theme-toggle" onClick={toggleTheme} />
+    return <ToggleContainer className="theme-toggle" onClick={toggleTheme} {...unused} />
 }
 
 const ToggleContainer = styled.div`

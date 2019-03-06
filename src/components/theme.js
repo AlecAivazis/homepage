@@ -17,7 +17,7 @@ export const Provider = ({ children }) => {
     const toggleTheme = () => setTheme(theme === 'day' ? 'night' : 'day')
 
     return (
-        <Context.Provider value={{ name: theme, colors: themes[theme], toggleTheme }}>
+        <Context.Provider value={{ name: theme, colors: themes[theme] || {}, toggleTheme }}>
             {children}
         </Context.Provider>
     )

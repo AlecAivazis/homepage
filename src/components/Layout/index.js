@@ -5,7 +5,7 @@ import './fonts.css'
 import './reset.css'
 import './theme.scss'
 
-export default ({ children, style, ...unused }) => {
+export default ({ children, ...unused }) => {
     // render the component
     return (
         <Container {...unused}>

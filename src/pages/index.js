@@ -7,7 +7,7 @@ import { Layout, SEO, Theme } from '~/components'
 
 const IndexPage = () => (
     <Layout style={{ paddingTop: 78 }}>
-        <SEO title="Home" keywords={['nautilus', 'graphql', 'schema', 'federation']} />
+        <SEO title="Home" />
         <Title style={{ justifyContent: 'space-between' }}>
             <span>
                 Hi{' '}

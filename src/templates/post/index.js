@@ -21,7 +21,7 @@ export default function Template({
 
     return (
         <Layout>
-            <SEO title={frontmatter.title} />
+            <SEO title={frontmatter.title} keywords={frontmatter.keywords} />
             <Header>
                 <Link to="/">Alec Aivazis</Link>
                 <SocialIconContainer>
@@ -104,6 +104,7 @@ export const pageQuery = graphql`
                 path
                 title
                 subtitle
+                keywords
             }
         }
     }

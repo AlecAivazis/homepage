@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
+const defaultKeywords = ['Alec', 'Aivazis', 'freelance', 'contractor']
+
 function SEO({ description, lang, meta, keywords, title }) {
     return (
         <StaticQuery
@@ -48,6 +50,11 @@ function SEO({ description, lang, meta, keywords, title }) {
                             {
                                 name: `twitter:description`,
                                 content: metaDescription,
+                            },
+                            ...meta,
+                            {
+                                name: `keywords`,
+                                content: [...defaultKeywords, ...keywords].join(`, `),
                             },
                         ]
                             .concat(

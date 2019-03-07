@@ -30,7 +30,7 @@
 
 .day {
     @include theme(#1c1c1c, white);
-    @include toggle('🌞', row);
+    @include toggle('☀️', row);
 
     & .theme-toggle:before {
         font-size: 28px;

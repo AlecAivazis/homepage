@@ -20,7 +20,7 @@
 
 .night {
     @include theme(white, #1c1c1c);
-    @include toggle('🌙', row-reverse);
+    @include toggle('🌛', row-reverse);
 
     & .theme-toggle:before {
         font-size: 24px;
@@ -30,7 +30,7 @@
 
 .day {
     @include theme(#1c1c1c, white);
-    @include toggle('☀️', row);
+    @include toggle('🌞', row);
 
     & .theme-toggle:before {
         font-size: 28px;

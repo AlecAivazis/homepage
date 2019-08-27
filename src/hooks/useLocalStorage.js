@@ -25,7 +25,7 @@ export default (key, defaultValue) => {
     // whenever our state changes we need to update local storage
     React.useEffect(() => {
         storage[key] = state
-    }, [state])
+    }, [state, key, storage])
 
     // a function to call that updates the value
     const updateValue = setState

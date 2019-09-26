@@ -35,6 +35,7 @@ module.exports = {
                             // base for generating different widths of each image.
                             maxWidth: 700,
                             linkImagesToOriginal: false,
+                            backgroundColor: 'transparent',
                         },
                     },
                 ],
